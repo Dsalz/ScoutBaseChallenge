@@ -1,31 +1,16 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { useQuery } from "@apollo/react-hooks";
-import { Link } from "react-router-dom";
 
 // Components
 import PageComponent from "../components/PageComponent";
 import Loader from "../components/Loader";
 import CountryLink from "../components/CountryLink";
+import Header from "../components/PageHeader";
+import CenteredText from "../components/CenteredText";
 
 //Queries
 import { getCountryQuery } from "../queries";
-
-const Header = styled.h1`
-  font-size: 30px;
-  margin: 40px auto 0;
-  font-weight: bold;
-  width: 70vw;
-  text-align: center;
-  min-width: 250px;
-`;
-
-const CenteredText = styled.p`
-  width: 100%;
-  padding: 20px;
-  font-size: 25px;
-  text-align: center;
-`;
 
 const CountryDetailsCard = styled.div`
   box-shadow: 0 0.625rem 2.5rem 0 rgba(198, 203, 222, 0.45);

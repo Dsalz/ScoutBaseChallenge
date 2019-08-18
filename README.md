@@ -5,6 +5,7 @@
 - [About](#about)
 - [Instructions](#instructions)
 - [Setup](#setup)
+- [Hosting](#hosting)
 
 ## About
 
@@ -34,6 +35,6 @@ You have received this directory within the .zip archive.
 ## Setup
 
 - Clone this repository
-- Navigate to project folder
+- Navigate to `front-end` folder
 - Run `npm install` to install all dependencies
 - Run `npm start` to start the project in development mode at port 3000

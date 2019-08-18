@@ -6,18 +6,11 @@ import { graphql } from "react-apollo";
 import PageComponent from "../components/PageComponent";
 import Loader from "../components/Loader";
 import ListCountryCard from "../components/ListCountryCard";
+import Header from "../components/PageHeader";
+import CenteredText from "../components/CenteredText";
 
 //Queries
 import { getCountriesQuery } from "../queries";
-
-const Header = styled.h1`
-  font-size: 30px;
-  margin: 40px auto 0;
-  font-weight: bold;
-  width: 70vw;
-  text-align: center;
-  min-width: 250px;
-`;
 
 const CountriesWrapper = styled.div`
   min-height: calc(100vh - 200px);
@@ -40,7 +33,7 @@ class CountriesPage extends Component {
         <CountriesWrapper>
           {loading && <Loader />}
           {!loading &&
-            countries.length > 0 &&
+            countries &&
             countries.map(country => (
               <ListCountryCard
                 name={country.name}
@@ -59,6 +52,12 @@ class CountriesPage extends Component {
                 handleClick={() => history.push(`/countries/${country.code}`)}
               />
             ))}
+          {!loading && !countries && (
+            <CenteredText>
+              There was a problem getting countries, please check your
+              connection and try again later.
+            </CenteredText>
+          )}
         </CountriesWrapper>
       </PageComponent>
     );
